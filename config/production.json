@@ -1,0 +1,15 @@
+{
+    "app": {
+        "port" : 3000
+    },
+    "db":  {
+        "client": "mysql",
+        "connection": {
+            "host": "127.0.0.1",
+            "user": "root",
+            "password": "password",
+            "database": "pos",
+            "charset": "utf8"
+        }
+    }
+}
