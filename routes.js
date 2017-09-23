@@ -1,5 +1,5 @@
-var ProductController = require('./product/controller');
+var ProductController = require('./product/controller')
 
-module.exports = function(app){
-    app.get('/products', ProductController.findAll);
+module.exports = function (app) {
+  app.get('/products', ProductController.findAll)
 }

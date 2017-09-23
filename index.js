@@ -1,9 +1,17 @@
 var express = require('express')
 var appConfig = require('./config').app
 var app = express()
+var bodyParser = require('body-parser')
+var cors = require('cors')
+var morgan = require('morgan')
 
-var routes = require('./routes')(app);
+app.use(morgan('combined'))
+app.use(bodyParser.json())
+app.use(cors())
 
-app.listen(appConfig.port, function () {
-    console.log('Example app listening on port 3000!')
+// initialize routes
+require('./routes')(app)
+
+app.listen(appConfig.port || 3000, function () {
+  console.log('Application is running on port 3000!')
 })
